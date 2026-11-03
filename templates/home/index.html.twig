@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+    <main>
+        <h1>Bienvenue sur {{ title }}</h1>
+        <p>Application Symfony minimale.</p>
+        <p><a href="{{ path('app_home') }}">Accueil</a></p>
+    </main>
+{% endblock %}
