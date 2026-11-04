@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact</h1>
+            <p class="lead">Une question, une demande ? Remplissez le formulaire ou passez nous voir.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container contact-grid">
+            <div class="panel">
+                <h2>Envoyer un message</h2>
+                {{ form_start(form, {attr: {class: 'form', novalidate: 'novalidate'}}) }}
+                    <div class="form__row">
+                        {{ form_row(form.name, {row_attr: {class: 'field'}}) }}
+                        {{ form_row(form.email, {row_attr: {class: 'field'}}) }}
+                    </div>
+                    {{ form_row(form.subject, {row_attr: {class: 'field'}}) }}
+                    {{ form_row(form.message, {row_attr: {class: 'field'}}) }}
+                    {{ form_rest(form) }}
+                    <button type="submit" class="button">Envoyer</button>
+                {{ form_end(form) }}
+            </div>
+
+            <aside class="contact-info">
+                <div class="panel">
+                    <h2>Nos coordonnées</h2>
+                    <dl class="details">
+                        <dt>Adresse</dt>
+                        <dd>{{ address }}</dd>
+                        <dt>E-mail</dt>
+                        <dd><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></dd>
+                    </dl>
+                </div>
+                <div class="map">
+                    <iframe
+                        title="Carte Google Maps : {{ address }}"
+                        src="https://maps.google.com/maps?q={{ address|url_encode }}&amp;z=15&amp;output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen></iframe>
+                </div>
+                <p class="map__link"><a href="https://www.google.com/maps/search/?api=1&amp;query={{ address|url_encode }}" target="_blank" rel="noopener">Ouvrir dans Google Maps</a></p>
+            </aside>
+        </div>
+    </section>
+{% endblock %}

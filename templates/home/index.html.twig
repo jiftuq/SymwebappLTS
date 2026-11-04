@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <section class="hero">
+        <div class="container hero__inner">
+            <p class="eyebrow">Symfony 8.1 · PHP 8.4</p>
+            <h1>Bienvenue sur SymwebappLTS</h1>
+            <p class="lead">Une application web légère et soignée, construite avec Symfony. Simple à faire évoluer, agréable à utiliser.</p>
+            <div class="actions">
+                <a class="button" href="{{ path('app_contact') }}">Nous contacter</a>
+                <a class="button button--ghost" href="{{ path('app_about') }}">En savoir plus</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section__title">Ce que vous trouverez ici</h2>
+            <div class="cards">
+                <article class="card">
+                    <div class="card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h3>Rapide</h3>
+                    <p>Des pages rendues côté serveur avec Twig, sans framework JavaScript lourd.</p>
+                </article>
+                <article class="card">
+                    <div class="card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Fiable</h3>
+                    <p>Formulaires validés et protégés contre le CSRF par les composants Symfony.</p>
+                </article>
+                <article class="card">
+                    <div class="card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+                    </div>
+                    <h3>Responsive</h3>
+                    <p>Une mise en page qui s'adapte aux téléphones, tablettes et ordinateurs.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--alt">
+        <div class="container cta">
+            <div>
+                <h2>Une question ?</h2>
+                <p>Écrivez-nous via le formulaire de contact, nous vous répondrons rapidement.</p>
+            </div>
+            <a class="button" href="{{ path('app_contact') }}">Écrire un message</a>
+        </div>
+    </section>
+{% endblock %}
