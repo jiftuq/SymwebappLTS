@@ -11,8 +11,12 @@ final class HomeController extends AbstractController
     #[Route('/', name: 'app_home', methods: ['GET'])]
     public function index(): Response
     {
-        return $this->render('home/index.html.twig', [
-            'title' => 'SymwebappLTS',
-        ]);
+        return $this->render('home/index.html.twig');
+    }
+
+    #[Route('/a-propos', name: 'app_about', methods: ['GET'])]
+    public function about(): Response
+    {
+        return $this->render('page/about.html.twig');
     }
 }

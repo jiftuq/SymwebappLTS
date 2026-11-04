@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}À propos{% endblock %}
+
+{% block body %}
+    <section class="page-header">
+        <div class="container">
+            <h1>À propos</h1>
+            <p class="lead">Qui nous sommes et comment ce site est construit.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container prose">
+            <h2>Notre projet</h2>
+            <p>SymwebappLTS est une application web basée sur Symfony. Elle sert de point de départ propre et facile à faire évoluer : ajoutez des pages, une base de données ou un espace membre selon vos besoins.</p>
+
+            <h2>La technique</h2>
+            <ul class="checklist">
+                <li><strong>Symfony 8.1</strong> pour le routage, les formulaires et la validation</li>
+                <li><strong>Twig</strong> pour les gabarits HTML</li>
+                <li><strong>AssetMapper</strong> pour le CSS et le JavaScript, sans étape de build</li>
+                <li><strong>Mailer</strong> pour transmettre les messages du formulaire de contact</li>
+            </ul>
+
+            <p><a class="button" href="{{ path('app_contact') }}">Nous contacter</a></p>
+        </div>
+    </section>
+{% endblock %}
